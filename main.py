@@ -1,0 +1,10 @@
+import pandas as pd
+file = pd.read_csv("zadanie.csv", on_bad_lines='skip')
+print(file.head(10))
+print(file.info())
+file = file.rename(columns={'userID': 'user_id', 'Track': 'track', 'Time': 'time', 'Day': 'day'})
+print(file.isna().sum())
+print(file.duplicated())
+print(file.drop_duplicates())
+print(file.duplicated().sum())
+print(file)
